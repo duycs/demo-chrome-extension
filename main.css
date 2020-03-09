@@ -10,6 +10,19 @@
 	padding: 20px;
 	height: auto;
 	background: white;
+	float: left;
+}
+
+.box {
+	width: 100%; 
+	float:left;
+}
+
+input {
+	width: 100%;
+	height: 25px;
+	padding: 5px;
+	border-radius: 0.5em #35424a;
 }
 
 .label, .title{
@@ -20,6 +33,8 @@
 
 .line {
 	border: 1px solid;
+	width:100%;
+	float:left;
 }
 
 

@@ -168,3 +168,44 @@ function timeleft(){
 	timerID = setTimeout("timeleft()", 1000); 
 }
 window.onload = timeleft;
+
+// Temperature converter
+var inputTemperatures = document.querySelectorAll(".temperature-converter input");
+var cencius = document.getElementById("cencius");
+var fahrenheit = document.getElementById("fahrenheit");
+var kelvin = document.getElementById("kelvin");
+
+inputTemperatures.forEach(element => {
+	element.oninput = function(){
+		tempratureConverter(this);
+	};
+	element.onchange = function(){
+		tempratureConverter(this);
+	};
+});
+
+function tempratureConverter(self){
+	let val = parseFloat(self.value);
+	let id = self.id;
+	
+	// ℉=(℃*1.8)+32K
+	// K=℃+273.15
+	if(id == 'cencius'){
+		fahrenheit.value = parseFloat((val*1.8)+32).toFixed(2);
+		kelvin.value = parseFloat((val + 273.15)).toFixed(2);
+	}
+
+	// ℃=(℉-32)/1.8
+	// K=((℉-32)/1.8)+273.15
+	if(id == 'fahrenheit'){
+		cencius.value = parseFloat((val-32)/1.8).toFixed(2);
+		kelvin.value = parseFloat(((val-32)/1.8)+273.15).toFixed(2);
+	}
+
+	// ℉=((K-273.15)*1.8)+32
+	// ℃=K-273.15
+	if(id == 'kelvin'){
+		fahrenheit.value = parseFloat(((val-273.15)*1.8)+32).toFixed(2);
+		cencius.value = parseFloat((val-273.15)).toFixed(2);
+	}
+};

@@ -37,12 +37,31 @@
 	<div class="line"></div>
 
 	<!-- time left -->
-	<div class='time-left'>
-		<div class="container">
-			<h3 class="label">Time left to next big thing</h3>
-			<span id='timeleft'></span>
+	<div class='container time-left'>
+		<h3 class="label">Time left to next big thing</h3>
+		<span id='timeleft'></span>
+	</div>
+
+	<div class="line"></div>
+
+	<!-- temperature converter -->
+	<div class = "container temperature-converter">
+		<h3 class="label">Temperature converter</h3>
+		<div class="box">
+			<div class="title">Cencius</div>
+			<input type = "number" id="cencius"></input>
+		</div>
+		<div class="box">
+			<div class="title">Fahrenheit</div>
+			<input type = "number" id="fahrenheit"/>
+		</div>
+		<div class="box">
+			<div class="title">Kelvil</div>
+			<input type = "number" id="kelvin"/>
 		</div>
 	</div>
+
+	<div class="line"></div>
 
 	<script src="jquery.js"></script>
 	<script src="main.js"></script>
