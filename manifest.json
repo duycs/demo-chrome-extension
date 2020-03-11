@@ -4,14 +4,14 @@
       "default_popup": "index.html"
    },
    "content_security_policy": "script-src 'self' 'unsafe-eval' https://ajax.googleapis.com; object-src 'self'",
-   "description": "A simple calculator build with Simple and js",
+   "description": "Demo simple extensions for chrome",
     "homepage_url": "https://duycs.github.io/",
    "icons": {
       "128": "ico/ico.png"
    },
    
    "manifest_version": 2,
-   "name": "Simple Calculator",
+   "name": "Demo chrome extensions",
    "permissions": [ "https://ajax.googleapis.com/" ],
    "version": "1.0.0"
 }
