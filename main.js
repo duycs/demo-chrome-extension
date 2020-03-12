@@ -209,3 +209,49 @@ function tempratureConverter(self){
 		cencius.value = parseFloat((val-273.15)).toFixed(2);
 	}
 };
+
+// Countdown time
+
+var hoursleft = 0;
+var minutesleft = 10;			// you can change these values to any value greater than 0
+var secondsleft = 0;
+var millisecondsleft = 0;
+var finishedtext = "Countdown finished!" // text that appears when the countdown reaches 0
+end = new Date();
+end.setHours(end.getHours()+hoursleft);
+end.setMinutes(end.getMinutes()+minutesleft);
+end.setSeconds(end.getSeconds()+secondsleft);
+end.setMilliseconds(end.getMilliseconds()+millisecondsleft);
+function countdown(){
+	now = new Date();
+	diff = end - now;
+	diff = new Date(diff);
+	var msec = diff.getMilliseconds();
+	var sec = diff.getSeconds();
+	var min = diff.getMinutes();
+	var hr = diff.getHours()-1;
+
+	// 1000 or 10 then set timeout corresponsding
+	if (min < 10){
+		min = "0" + min;
+	}
+	if (sec < 10){
+		sec = "0" + sec;
+	}
+	if(msec < 10){
+		msec = "00" +msec;
+	}
+	else if(msec < 100){
+		msec = "0" +msec;
+	}
+	if(now >= end){
+		clearTimeout(timerID);
+		document.getElementById("cdtime").innerHTML = finishedtext;
+	}
+	else{
+	document.getElementById("cdtime").innerHTML = hr + ":" + min + ":" + sec ;
+	//+ ":" + msec;
+	}		
+	timerID = setTimeout("countdown()", 10); 
+}
+window.onload = countdown;

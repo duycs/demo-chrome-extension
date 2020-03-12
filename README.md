@@ -5,4 +5,8 @@ demo chrome extension
 
 ### Temperature
 
-### Count down time
+### Countdown
+
+
+## References
+- https://www.proglogic.com/
